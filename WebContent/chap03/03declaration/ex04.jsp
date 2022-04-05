@@ -20,7 +20,7 @@ return a * b;
 <!-- scriptlet, expression, declaration 등을 활용하여 완성 -->
 
 <%
-for(int i = 1; i <= 9; i++) {
+for(int i = 2; i <= 9; i++) {
 	for(int j = 1; j <= 9; j++) {
 %>
 <%= i + " x " + j + " = " + gugudan(i, j) %>
