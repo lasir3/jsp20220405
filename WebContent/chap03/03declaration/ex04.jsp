@@ -21,6 +21,9 @@ return a * b;
 
 <%
 for(int i = 2; i <= 9; i++) {
+%>
+	<h2><%= i %> 단 </h2>
+<%
 	for(int j = 1; j <= 9; j++) {
 %>
 <%= i + " x " + j + " = " + gugudan(i, j) %>
