@@ -11,7 +11,7 @@
 </head>
 <body>
 main.jsp에서 생성한 내용
-<jsp:include page="sub.jsp"></jsp:include>
+<jsp:include page="7_02sub.jsp"></jsp:include>
 
 include 이후의 내용.
 </body>
