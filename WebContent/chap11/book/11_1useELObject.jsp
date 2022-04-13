@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
+<%
+	request.setAttribute("name", "최범균");
+%>
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
@@ -10,29 +13,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>attribute가 list 일때...</h1>
-<%
-List<String> list = new ArrayList<>();
-list.add("hello");
-list.add("doctor");
-
-pageContext.setAttribute("list1", list);
-%>
-
-<%
-List<String> l = (List<String>) pageContext.getAttribute("list1");
-%>
-
-<p><%= l.get(0) %></p>
-<p><%= l.get(1) %></p>
-
-<hr />
-
-<p>${list1[0] }</p>
-<p>${list1[1] }</p>
-<hr />
-<p>${list1["0"] }</p>
-<p>${list1["1"] }</p>
-
+요청 URI:${pageContext.request.requestURI } <br />
+request의 name 속성:${requestScope.name } <br />
+code 파라미터: ${param.code }
 </body>
 </html>

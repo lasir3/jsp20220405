@@ -17,9 +17,8 @@ Car c1 = new Car();
 Car c2 = new Car();
 
 List<String> o1 = new ArrayList<>();
-/* o1.add("park"); */
-o1.add(1, "son");
-/* o1.add("son"); */
+o1.add("park");
+o1.add("son");
 c1.setOwners(o1);
 
 List<String> o2 = new ArrayList<>();
