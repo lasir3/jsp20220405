@@ -10,6 +10,11 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
+  <context-param>
+  	<param-name>initParamName1</param-name>
+  	<param-value>initParamValue1</param-value>
+  </context-param>
+  
   <session-config>
   <!-- session 유지 시간 기본값: 30분 -->
   <!-- 마지막 접근 후 유지시간 지나면 session 삭제됨 -->
