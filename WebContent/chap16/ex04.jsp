@@ -1,15 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags/my1" %>
 <%@ page import="java.util.*" %>
-<%@ page import="java.util.HashMap" %>
 <% request.setCharacterEncoding("utf-8"); %>
-<%
-	HashMap<String, Object> mapData = new HashMap<String, Object>();
-	mapData.put("name", "최범균");
-	mapData.put("today", new java.util.Date());
-%>
-<c:set var="intArray"  value="<%= new int[] {1,2,3,4,5} %>"></c:set>
-<c:set var="map" value="<%= mapData %>"></c:set>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,30 +15,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h4>1부터 100까지 홀수의 합</h4>
-<c:set var="sum" value="0"></c:set>
-<c:forEach var="i" begin="1" end="100" step="2">
-<c:set var="sum" value="${sum+i }"></c:set>
-</c:forEach>
- 결과 = ${sum }
- 
- <h4>구구단: 4단</h4>
- <ul>
- <c:forEach var="i" begin="1" end="9">
- 	<li>4 * ${i } = ${4 * i }</li>
- </c:forEach>
- </ul>
- 
- <h4>int형 배열</h4>
- 
- <c:forEach var="i" items="${intArray }" begin="2" end="4" varStatus="status">
- 	${status.index}-${status.count }-[${i }] <br />
- </c:forEach>
- 
- <h4>Map</h4>
- 
- <c:forEach var="i" items="${map }">
- 	${i.key } = ${i.value } <br />
- </c:forEach>
+	<my:mytag4 num1="3" num2="5"></my:mytag4>
+	<!-- num1과 num2를 더한 결과각 출력되도록 mytag4.tag를 완성 -->
+	<my:mytag4 num1="9" num2="8"></my:mytag4>
+	
+	<my:mytag4 num1="10"></my:mytag4>
+	
+	<c:if test="true"> <!-- c:if 문에는 test attribute가 반드시 필요하다 -->
+		hello
+	</c:if>
 </body>
 </html>
