@@ -21,4 +21,121 @@
   <!-- 단위: 분(minutes) -->
   	<session-timeout>30</session-timeout>
   </session-config>
+  
+  <!-- 서블릿 설정 -->
+  <servlet>
+  	<servlet-name>S3Servlet01</servlet-name>
+  	<servlet-class>chap17.servlet3.S3servlet03</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>S3Servlet01</servlet-name>
+  	<url-pattern>/s3/S3Servlet01</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>S3Servlet02</servlet-name>
+  	<servlet-class>chap17.servlet3.S3servlet03</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>S3Servlet02</servlet-name>
+  	<url-pattern>/s3/S3Servlet02</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  	<servlet-name>S3Servlet03</servlet-name>
+  	<servlet-class>chap17.servlet3.S3Servlet03</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>S3Servlet03</servlet-name>
+  	<url-pattern>/s3/servlet03</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>S3Servlet04</servlet-name>
+  	<servlet-class>chap17.servlet3.S3Servlet04</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>S3Servlet04</servlet-name>
+	<url-pattern>/s3/servlet04</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>S3Servlet05</servlet-name>
+  	<servlet-class>chap17.servlet3.S3Servlet05</servlet-class>
+  	<init-param>
+  		<param-name>param1</param-name>
+  		<param-value>value1</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>dbUrl</param-name>
+  		<param-value>awsMariaDbAddress</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>S3Servlet05</servlet-name>
+  	<url-pattern>/s3/servlet05</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>S3Servlet06</servlet-name>
+  	<servlet-class>chap17.servlet3.S3Servlet06</servlet-class>
+  	<init-param>
+  		<param-name>viewName</param-name>
+  		<param-value>/WEB-INF/view/chap17/ex06.jsp</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>S3Servlet06</servlet-name>
+  	<url-pattern>/s3/servlet06</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>S4Servlet01</servlet-name>
+  	<servlet-class>chap17.servlet4.S4Servlet01</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>S4Servlet01</servlet-name>
+  	<!-- <url-pattern>/s4/servlet01</url-pattern> -->
+  	<!-- <url-pattern>/s4/url1/url2/*</url-pattern> -->
+  	<!-- <url-pattern>*.do</url-pattern> -->
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>S4Servlet02</servlet-name>
+  	<servlet-class>chap17.servlet4.S4Servlet02</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>S4Servlet02</servlet-name>
+  	<url-pattern>/s4/s4servlet/*</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>S4Servlet03</servlet-name>
+  	<servlet-class>chap17.servlet4.S4Servlet03</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>S4Servlet03</servlet-name>
+	<url-pattern>*.action</url-pattern>  	
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>now</servlet-name>
+  <servlet-class>chap17.book.NowServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>now</servlet-name>
+  	<url-pattern>/now</url-pattern>
+  </servlet-mapping>
 </web-app>
