@@ -138,4 +138,49 @@
   	<servlet-name>now</servlet-name>
   	<url-pattern>/now</url-pattern>
   </servlet-mapping>
+  
+  <!-- filters -->
+  <filter>
+  	<filter-name>filter01</filter-name>
+  	<filter-class>chap19.Filter01</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>filter01</filter-name>
+  	<url-pattern>/s3/servlet06</url-pattern>
+  </filter-mapping>
+  <filter>
+  	<filter-name>filter02</filter-name>
+  	<filter-class>chap19.Filter02</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>filter02</filter-name>
+  	<url-pattern>/s3/servlet06</url-pattern>
+  </filter-mapping>
+  <filter>
+  	<filter-name>filter03</filter-name>
+  	<filter-class>chap19.Filter03</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>filter03</filter-name>
+  	<url-pattern>/s3/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>filter04</filter-name>
+  	<filter-class>chap19.Filter04</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>filter04</filter-name>
+  	<url-pattern>/s5/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>filter05</filter-name>
+  	<filter-class>chap19.Filter05</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>filter05</filter-name>
+  	<url-pattern>/s5/memberOnly</url-pattern>
+  </filter-mapping>
+  
 </web-app>
