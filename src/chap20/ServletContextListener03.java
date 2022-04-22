@@ -25,7 +25,7 @@ public class ServletContextListener03 implements ServletContextListener {
          System.out.println("앱 종료됨 3번 리스너 종료 메소드 실행!@#!@#!!!!");
     }
 
-	/**
+	/** 
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
     public void contextInitialized(ServletContextEvent sce)  { 
