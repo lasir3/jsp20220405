@@ -34,9 +34,7 @@
 							<th>고객명</th>
 							<th>도시</th>
 							<th>나라</th>
-							<th>
-								<i class="fa-solid fa-signs-post"></i>
-							</th>
+							<th><i class="fa-solid fa-signs-post"></i></th>
 						</tr>
 					</thead>
 					<tbody>
