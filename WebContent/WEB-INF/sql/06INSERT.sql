@@ -16,11 +16,11 @@ VALUES (94, 'Cha', 'Bum', 'BundesLiga', 'Köln', '22222', 'Germany');
 DESCRIBE Customers;
 DESC Customers;
 
--- autoOincrement 컬럼은 insert 할 때 값 생략 가능
+-- autoincrement 컬럼은 insert 할 때 값 생략 가능
 INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
 VALUES ('Oscar', 'Isaac', 'london', 'London', 'B-999', 'UK');
 
-INSERT INto Customers (Country, PostalCode, City, Address, ContactName, CustomerName)
+INSERT INTO Customers (Country, PostalCode, City, Address, ContactName, CustomerName)
 VALUES ('USA', 'A112', 'Seattle', 'Hotel', 'Rap Monster', 'RM');
 
 SELECT * FROM Employees;
