@@ -23,20 +23,6 @@
 	integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
 	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script>
-	$(document).ready(function() {
-		$(".delete-button").click(function(e) {
-			e.preventDefault();
-
-			let check = confirm("삭제하시겠습니까?");
-
-			if (check) {
-				$(this).closest("form").submit();
-			}
-		});
-	});
-</script>
-
 <title>Insert title here</title>
 </head>
 <body>
@@ -44,18 +30,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-			
-				<c:if test="${not empty param.success }">
-					<c:if test="${param.success }">
-						<div class="alert alert-success">삭제가 완료되었습니다.</div>
-					</c:if>
-					<c:if test="${not param.success }">
-						<div class="alert alert-danger">삭제 중 오류가 발생하였습니다.</div>
-					</c:if>
-				</c:if>
-				
+
 				<h1>고객 테이블</h1>
-				
+
 				<table class="table">
 					<thead>
 						<tr>
@@ -64,7 +41,6 @@
 							<th>City</th>
 							<th>Country</th>
 							<th>PostalCode</th>
-							<th>DELETE</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -75,22 +51,46 @@
 								<td>${cus.city }</td>
 								<td>${cus.country }</td>
 								<td>${cus.postCode }</td>
-								<td>
-
-									<form action="S14Servlet18" method="post">
-										<input type="hidden" name="id" value="${cus.id }" />
-										<button class="delete-button">
-											<i class="fa-solid fa-trash-can"></i>
-										</button>
-
-									</form>
-								</td>
-
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
-				
+				<nav>
+					<ul class="pagination justify-content-center">
+						<c:if test="${prevPage >= 1 }">
+							<li class="page-item">
+								<a class="page-link" href="S14Servlet19?page=1">FirstPage</a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="S14Servlet19?page=${prevPage }"
+									aria-label="Previous">
+									<span aria-hidden="true">&laquo;</span>
+								</a>
+							</li>
+
+						</c:if>
+
+						<c:forEach begin="${startPage }" end="${endPage }" var="pageNum">
+							<li class="page-item ${pageNum == currentPage ? 'active' : '' }">
+								<a class="page-link" href="S14Servlet19?page=${pageNum }">${pageNum }</a>
+							</li>
+
+						</c:forEach>
+
+						<c:if test="${endPage != lastPage }">
+							<li class="page-item">
+								<a class="page-link" href="S14Servlet19?page=${nextPage }"
+									aria-label="Next">
+									<span aria-hidden="true">&raquo;</span>
+								</a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="S14Servlet19?page=${lastPage }">LastPage</a>
+							</li>
+						</c:if>
+
+					</ul>
+				</nav>
 			</div>
 		</div>
 	</div>
