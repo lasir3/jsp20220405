@@ -183,6 +183,7 @@
   	<filter-name>filter04</filter-name>
   	<url-pattern>/s5/*</url-pattern>
   	<url-pattern>/board/*</url-pattern>
+	<url-pattern>/reply/*</url-pattern>
   </filter-mapping>
   
   <filter>
