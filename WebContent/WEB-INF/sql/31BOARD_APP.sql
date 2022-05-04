@@ -16,6 +16,8 @@ CREATE TABLE Reply (
    FOREIGN KEY (board_id) REFERENCES Board(id) -- FOREIGN KEY 제약사항 추가
 );
 
+SELECT * FROM Reply;
+
 -- 테이블 관계
 -- 1대1
 -- 학생(이름, 생년월일.....), 학력(출신학교, 졸업년도)

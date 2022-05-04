@@ -2,6 +2,7 @@ package app01;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 import app01.dao.BoardDao;
+import app01.dao.ReplyDao;
 
 /**
  * Servlet implementation class BoardRemoveServlet
@@ -58,13 +60,36 @@ public class BoardRemoveServlet extends HttpServlet {
 		
 		// 비지니스 로직 처리(db crud)
 		BoardDao dao = new BoardDao();
+		ReplyDao replyDao = new ReplyDao();
+		
 		boolean success = false;
-		try (Connection con = ds.getConnection()) {
+		Connection con = null;
+		try {
+			con = ds.getConnection();
+			con.setAutoCommit(false);
 			
+			replyDao.deleteByBoardId(con, id);
 			success = dao.delete(con, id);
+			
+			con.commit();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+			if (con != null) {
+				try {
+					con.rollback();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+			}
+		} finally {
+			if (con != null) {
+				try {
+					con.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 		}
 		// 결과 set
 		
