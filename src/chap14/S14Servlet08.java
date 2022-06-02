@@ -50,7 +50,7 @@ public class S14Servlet08 extends HttpServlet {
 				
 				employee.setFirstName(rs.getString(1));
 				employee.setLastName(rs.getString(2));
-				employee.setBirthDate(rs.getDate(3));
+				employee.setBirthDate(rs.getString(3));
 				
 				list.add(employee);
 			}

@@ -51,7 +51,7 @@ public class S14Servlet06 extends HttpServlet {
 			if (rs.next()) {
 				String fisrtName = rs.getString("FirstName");
 				String lastName = rs.getString("LastName");
-				Date birthDate = rs.getDate("BirthDate");
+				String birthDate = rs.getString("BirthDate");
 				
 				employee.setFirstName(fisrtName);
 				employee.setLastName(lastName);

@@ -44,8 +44,8 @@ public class Employee {
 	public String getBirthDate() {
 		return birthDate;
 	}
-	public void setBirthDate(String birthDate) {
-		this.birthDate = birthDate;
+	public void setBirthDate(String string) {
+		this.birthDate = string;
 	}
 	
 	
